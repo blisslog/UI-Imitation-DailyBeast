@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YJU-1n-ngY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tnW-hN-eiG">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="YJU-1n-ngY" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lub-ML-8Sh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YK9-XM-Cyr" kind="relationship" relationship="rootViewController" id="Wg6-or-dnU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkN-A6-YIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="903"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h72-S5-Zsb">
+            <objects>
+                <viewController id="YK9-XM-Cyr" customClass="ViewController" customModule="NEWS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ISM-N5-95e"/>
+                        <viewControllerLayoutGuide type="bottom" id="Se7-vH-r91"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NBZ-vK-ciK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuV-0O-Tv4">
+                                <rect key="frame" x="0.0" y="20" width="600" height="35"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4Ca-gv-A3Y"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="130" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="vkU-Ao-Wpv">
+                                <rect key="frame" x="0.0" y="55" width="600" height="545"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news_cell" rowHeight="130" id="waH-YK-Hxq" customClass="NewsCell" customModule="NEWS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waH-YK-Hxq" id="bBk-LS-n3g">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-qu-OBH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKu-FM-iy6" userLabel="Title">
+                                                            <rect key="frame" x="19" y="0.0" width="562" height="48"/>
+                                                            <string key="text">Marco Rubio's 'Illegal'
+Bromance</string>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePy-2s-Kae" userLabel="Desc">
+                                                            <rect key="frame" x="19" y="54" width="562" height="29"/>
+                                                            <string key="text">What do you get when you combine Rubio's slimy friend and their joint push to help undocumented immigrants get in-stataaaaaaaaaaaaaaaaa</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.92549019610000005" green="0.65098039220000004" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="bKu-FM-iy6" firstAttribute="top" secondItem="Ln0-qu-OBH" secondAttribute="top" id="Ko0-jf-L0D"/>
+                                                        <constraint firstItem="bKu-FM-iy6" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" constant="19" id="LfK-xf-mKt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bKu-FM-iy6" secondAttribute="trailing" constant="19" id="WiL-mv-Kpf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ePy-2s-Kae" secondAttribute="trailing" constant="19" id="b9Z-N8-C9A"/>
+                                                        <constraint firstItem="ePy-2s-Kae" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" constant="19" id="mpr-VF-J31"/>
+                                                        <constraint firstItem="ePy-2s-Kae" firstAttribute="top" secondItem="bKu-FM-iy6" secondAttribute="bottom" constant="6" id="q6p-co-2hL"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ln0-qu-OBH" secondAttribute="bottom" id="DV1-2q-kdz"/>
+                                                <constraint firstItem="Ln0-qu-OBH" firstAttribute="leading" secondItem="bBk-LS-n3g" secondAttribute="leading" id="Io5-QM-ALr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ln0-qu-OBH" secondAttribute="trailing" id="Qs4-Hb-u7Y"/>
+                                                <constraint firstItem="Ln0-qu-OBH" firstAttribute="top" secondItem="bBk-LS-n3g" secondAttribute="top" id="cqm-H4-XNz"/>
+                                                <constraint firstItem="Ln0-qu-OBH" firstAttribute="centerY" secondItem="bBk-LS-n3g" secondAttribute="centerY" id="mzR-fE-fe2"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="DV1-2q-kdz"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="desc" destination="ePy-2s-Kae" id="uen-oQ-Vso"/>
+                                            <outlet property="title" destination="bKu-FM-iy6" id="XrU-pg-dGa"/>
+                                            <outlet property="viewFrame" destination="Ln0-qu-OBH" id="Uct-az-mSz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YK9-XM-Cyr" id="wNt-mY-9Ma"/>
+                                    <outlet property="delegate" destination="YK9-XM-Cyr" id="N5e-Qd-yjz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vkU-Ao-Wpv" firstAttribute="top" secondItem="FuV-0O-Tv4" secondAttribute="bottom" id="3db-zz-gdg"/>
+                            <constraint firstItem="Se7-vH-r91" firstAttribute="top" secondItem="vkU-Ao-Wpv" secondAttribute="bottom" id="Jqd-6q-Rbe"/>
+                            <constraint firstAttribute="trailing" secondItem="FuV-0O-Tv4" secondAttribute="trailing" id="OfL-Bu-1JD"/>
+                            <constraint firstItem="FuV-0O-Tv4" firstAttribute="leading" secondItem="NBZ-vK-ciK" secondAttribute="leading" id="aVZ-cv-lTm"/>
+                            <constraint firstItem="FuV-0O-Tv4" firstAttribute="top" secondItem="NBZ-vK-ciK" secondAttribute="topMargin" constant="20" id="aZr-wy-Kog"/>
+                            <constraint firstItem="vkU-Ao-Wpv" firstAttribute="leading" secondItem="NBZ-vK-ciK" secondAttribute="leading" id="eY0-Xf-B5g"/>
+                            <constraint firstAttribute="trailing" secondItem="vkU-Ao-Wpv" secondAttribute="trailing" id="wtQ-pM-xnB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cgO-GQ-hOZ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="vkU-Ao-Wpv" id="09J-8B-XnL"/>
+                        <outlet property="topView" destination="FuV-0O-Tv4" id="Y2I-qX-3HT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aln-IM-Gli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="900"/>
+        </scene>
+    </scenes>
+</document>
