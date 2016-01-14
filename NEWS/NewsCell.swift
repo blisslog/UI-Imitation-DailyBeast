@@ -8,10 +8,11 @@
 
 import UIKit
 
-class NewsCell: UITableViewCell {
+class NewsCell: UITableViewCell, BGImageFlowProtocol {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var viewFrame: UIView!
     
     override func awakeFromNib() {
@@ -23,6 +24,10 @@ class NewsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func flowCell(moveY value: CGFloat) {
+        self.bgImage.transform = CGAffineTransformMakeTranslation(0.0, value)
     }
 
 }

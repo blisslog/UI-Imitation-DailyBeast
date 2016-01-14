@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941F481C479243005F0669 /* BGImageFlowTableView.swift */; };
 		EFE41A4D1C3CAF32005CFF81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE41A4C1C3CAF32005CFF81 /* AppDelegate.swift */; };
 		EFE41A4F1C3CAF32005CFF81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE41A4E1C3CAF32005CFF81 /* ViewController.swift */; };
 		EFE41A521C3CAF32005CFF81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFE41A501C3CAF32005CFF81 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF941F481C479243005F0669 /* BGImageFlowTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGImageFlowTableView.swift; sourceTree = "<group>"; };
 		EFE41A491C3CAF32005CFF81 /* NEWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE41A4C1C3CAF32005CFF81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFE41A4E1C3CAF32005CFF81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				EFE41A4C1C3CAF32005CFF81 /* AppDelegate.swift */,
 				EFE41A4E1C3CAF32005CFF81 /* ViewController.swift */,
 				EFE41A5E1C3D09AA005CFF81 /* NewsCell.swift */,
+				EF941F481C479243005F0669 /* BGImageFlowTableView.swift */,
 				EFE41A501C3CAF32005CFF81 /* Main.storyboard */,
 				EFE41A531C3CAF32005CFF81 /* Assets.xcassets */,
 				EFE41A551C3CAF32005CFF81 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */,
 				EFE41A4F1C3CAF32005CFF81 /* ViewController.swift in Sources */,
 				EFE41A5F1C3D09AA005CFF81 /* NewsCell.swift in Sources */,
 				EFE41A4D1C3CAF32005CFF81 /* AppDelegate.swift in Sources */,
@@ -288,6 +292,7 @@
 				EFE41A5D1C3CAF32005CFF81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
