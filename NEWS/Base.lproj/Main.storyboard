@@ -38,7 +38,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuV-0O-Tv4">
                                 <rect key="frame" x="0.0" y="20" width="600" height="35"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="4Ca-gv-A3Y"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waH-YK-Hxq" id="bBk-LS-n3g">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="129.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-qu-OBH">
@@ -128,17 +128,32 @@ Bromance</string>
                                     <outlet property="delegate" destination="YK9-XM-Cyr" id="N5e-Qd-yjz"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_top_to_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="U5I-Le-3va">
+                                <rect key="frame" x="0.0" y="55" width="600" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U5I-Le-3va" secondAttribute="height" multiplier="600:17" id="mpe-Ac-GM9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="U5I-Le-3va" firstAttribute="width" secondItem="U5I-Le-3va" secondAttribute="height" multiplier="600:17" id="011-Cp-BBs"/>
                             <constraint firstItem="vkU-Ao-Wpv" firstAttribute="top" secondItem="FuV-0O-Tv4" secondAttribute="bottom" id="3db-zz-gdg"/>
+                            <constraint firstItem="U5I-Le-3va" firstAttribute="leading" secondItem="NBZ-vK-ciK" secondAttribute="leading" id="FJK-8u-HWO"/>
+                            <constraint firstItem="U5I-Le-3va" firstAttribute="top" secondItem="FuV-0O-Tv4" secondAttribute="bottom" id="Fx4-sy-5BW"/>
                             <constraint firstItem="Se7-vH-r91" firstAttribute="top" secondItem="vkU-Ao-Wpv" secondAttribute="bottom" id="Jqd-6q-Rbe"/>
                             <constraint firstAttribute="trailing" secondItem="FuV-0O-Tv4" secondAttribute="trailing" id="OfL-Bu-1JD"/>
                             <constraint firstItem="FuV-0O-Tv4" firstAttribute="leading" secondItem="NBZ-vK-ciK" secondAttribute="leading" id="aVZ-cv-lTm"/>
                             <constraint firstItem="FuV-0O-Tv4" firstAttribute="top" secondItem="NBZ-vK-ciK" secondAttribute="topMargin" constant="20" id="aZr-wy-Kog"/>
                             <constraint firstItem="vkU-Ao-Wpv" firstAttribute="leading" secondItem="NBZ-vK-ciK" secondAttribute="leading" id="eY0-Xf-B5g"/>
+                            <constraint firstAttribute="trailing" secondItem="U5I-Le-3va" secondAttribute="trailing" id="lpe-Ar-aop"/>
                             <constraint firstAttribute="trailing" secondItem="vkU-Ao-Wpv" secondAttribute="trailing" id="wtQ-pM-xnB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="011-Cp-BBs"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="cgO-GQ-hOZ"/>
                     <connections>
@@ -182,17 +197,18 @@ Bromance</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AO7-6d-mTN">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4T-hM-Fxg" userLabel="Scroll BG White View">
+                                        <rect key="frame" x="0.0" y="240" width="600" height="78"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yu-lT-QRd">
-                                        <rect key="frame" x="8" y="240" width="584" height="21"/>
+                                        <rect key="frame" x="8" y="260" width="584" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sM-AI-yib">
-                                        <rect key="frame" x="18" y="250" width="240" height="128"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ut3-kA-rRg">
-                                        <rect key="frame" x="8" y="269" width="584" height="17"/>
+                                        <rect key="frame" x="8" y="301" width="584" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -201,15 +217,19 @@ Bromance</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Ut3-kA-rRg" firstAttribute="leading" secondItem="AO7-6d-mTN" secondAttribute="leading" constant="8" id="0SB-pB-5N0"/>
-                                    <constraint firstItem="Ut3-kA-rRg" firstAttribute="top" secondItem="2yu-lT-QRd" secondAttribute="bottom" constant="8" id="7bd-Lz-7HP"/>
+                                    <constraint firstItem="Ut3-kA-rRg" firstAttribute="top" secondItem="2yu-lT-QRd" secondAttribute="bottom" constant="20" id="7bd-Lz-7HP"/>
                                     <constraint firstAttribute="bottom" secondItem="Ut3-kA-rRg" secondAttribute="bottom" constant="486" id="8wR-OH-kSp"/>
                                     <constraint firstItem="2yu-lT-QRd" firstAttribute="leading" secondItem="AO7-6d-mTN" secondAttribute="leading" constant="8" id="B67-wB-YPu"/>
                                     <constraint firstItem="Ut3-kA-rRg" firstAttribute="leading" secondItem="AO7-6d-mTN" secondAttribute="leading" constant="8" id="EjX-sf-IA8"/>
                                     <constraint firstAttribute="trailing" secondItem="Ut3-kA-rRg" secondAttribute="trailing" constant="8" id="Ejf-lb-FlK"/>
                                     <constraint firstAttribute="trailing" secondItem="2yu-lT-QRd" secondAttribute="trailing" constant="8" id="Ovq-ov-zAi"/>
-                                    <constraint firstItem="2yu-lT-QRd" firstAttribute="top" secondItem="AO7-6d-mTN" secondAttribute="top" constant="240" id="Pvd-5W-x08"/>
+                                    <constraint firstItem="2yu-lT-QRd" firstAttribute="top" secondItem="AO7-6d-mTN" secondAttribute="top" constant="260" id="Pvd-5W-x08"/>
+                                    <constraint firstItem="X4T-hM-Fxg" firstAttribute="leading" secondItem="AO7-6d-mTN" secondAttribute="leading" id="cqM-gb-kgt"/>
+                                    <constraint firstItem="X4T-hM-Fxg" firstAttribute="bottom" secondItem="Ut3-kA-rRg" secondAttribute="bottom" id="eax-dn-vDw"/>
                                     <constraint firstItem="Ut3-kA-rRg" firstAttribute="width" secondItem="AO7-6d-mTN" secondAttribute="width" constant="-16" id="ge5-aB-H8y"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="Ut3-kA-rRg" secondAttribute="bottom" constant="20" id="pa4-Gr-bzW"/>
+                                    <constraint firstAttribute="trailing" secondItem="X4T-hM-Fxg" secondAttribute="trailing" id="rkM-cN-jJZ"/>
+                                    <constraint firstItem="X4T-hM-Fxg" firstAttribute="top" secondItem="2yu-lT-QRd" secondAttribute="top" constant="-20" id="vwN-jV-rB5"/>
                                     <constraint firstAttribute="bottom" secondItem="2yu-lT-QRd" secondAttribute="bottom" constant="515" id="xDM-HL-OBZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Ut3-kA-rRg" secondAttribute="trailing" constant="8" id="ysY-7S-soH"/>
                                 </constraints>
@@ -231,15 +251,16 @@ Bromance</string>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0uB-gg-5ia" secondAttribute="height" multiplier="67:35" id="nnW-KP-fiE"/>
                                         </constraints>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
+                                        <state key="normal" title="BACK">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="pressedBtn" destination="hjU-M6-8Jk" eventType="touchUpInside" id="aiJ-sV-ZhM"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="0uB-gg-5ia" firstAttribute="leading" secondItem="pde-Nc-Y2Z" secondAttribute="leading" id="985-UX-CMP"/>
                                     <constraint firstAttribute="bottom" secondItem="0uB-gg-5ia" secondAttribute="bottom" id="LMl-Uw-Cj6"/>
@@ -247,20 +268,37 @@ Bromance</string>
                                     <constraint firstAttribute="height" constant="35" id="Sel-UP-Ro2"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_top_to_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="9Qs-zd-QjN">
+                                <rect key="frame" x="0.0" y="55" width="600" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Qs-zd-QjN" secondAttribute="height" multiplier="600:17" id="HGx-iV-DZt"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mqp-bd-mW2" firstAttribute="top" secondItem="Lqw-qX-4fx" secondAttribute="bottom" constant="20" id="05b-QB-Co7"/>
+                            <constraint firstItem="9Qs-zd-QjN" firstAttribute="top" secondItem="pde-Nc-Y2Z" secondAttribute="bottom" id="3R5-pV-bnw"/>
                             <constraint firstItem="pde-Nc-Y2Z" firstAttribute="leading" secondItem="EVi-yP-zWr" secondAttribute="leading" id="Adj-bR-5DO"/>
+                            <constraint firstItem="9Qs-zd-QjN" firstAttribute="leading" secondItem="pde-Nc-Y2Z" secondAttribute="leading" id="CgP-QV-IcW"/>
+                            <constraint firstItem="9Qs-zd-QjN" firstAttribute="top" secondItem="pde-Nc-Y2Z" secondAttribute="top" id="GGc-ib-R2c"/>
                             <constraint firstItem="AO7-6d-mTN" firstAttribute="leading" secondItem="EVi-yP-zWr" secondAttribute="leading" id="NUK-gy-xZ9"/>
                             <constraint firstItem="AO7-6d-mTN" firstAttribute="top" secondItem="Lqw-qX-4fx" secondAttribute="bottom" id="Or4-7M-s5A"/>
                             <constraint firstItem="Mqp-bd-mW2" firstAttribute="leading" secondItem="EVi-yP-zWr" secondAttribute="leading" id="QnS-og-Qak"/>
                             <constraint firstAttribute="trailing" secondItem="AO7-6d-mTN" secondAttribute="trailing" id="X6m-WW-ybX"/>
                             <constraint firstItem="sKJ-1V-epc" firstAttribute="top" secondItem="AO7-6d-mTN" secondAttribute="bottom" id="bSI-xt-Iej"/>
+                            <constraint firstItem="9Qs-zd-QjN" firstAttribute="leading" secondItem="EVi-yP-zWr" secondAttribute="leading" id="oLT-OJ-rhV"/>
                             <constraint firstItem="pde-Nc-Y2Z" firstAttribute="top" secondItem="EVi-yP-zWr" secondAttribute="top" constant="20" id="oRD-lT-XaP"/>
                             <constraint firstAttribute="trailing" secondItem="pde-Nc-Y2Z" secondAttribute="trailing" id="pMH-jT-pXL"/>
                             <constraint firstAttribute="trailing" secondItem="Mqp-bd-mW2" secondAttribute="trailing" id="pgd-i1-R9R"/>
+                            <constraint firstAttribute="trailing" secondItem="9Qs-zd-QjN" secondAttribute="trailing" id="sgB-1q-boH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CgP-QV-IcW"/>
+                                <exclude reference="GGc-ib-R2c"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="img_bg" destination="Mqp-bd-mW2" id="hFM-Gx-sMV"/>
@@ -275,5 +313,6 @@ Bromance</string>
     </scenes>
     <resources>
         <image name="gradient_left_to_right" width="266" height="1"/>
+        <image name="gradient_top_to_bottom" width="1" height="6"/>
     </resources>
 </document>

@@ -15,6 +15,7 @@
 		EFE41A541C3CAF32005CFF81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFE41A531C3CAF32005CFF81 /* Assets.xcassets */; };
 		EFE41A571C3CAF32005CFF81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFE41A551C3CAF32005CFF81 /* LaunchScreen.storyboard */; };
 		EFE41A5F1C3D09AA005CFF81 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE41A5E1C3D09AA005CFF81 /* NewsCell.swift */; };
+		EFF61C161C4E26BF00D65233 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF61C151C4E26BF00D65233 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EFE41A561C3CAF32005CFF81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFE41A581C3CAF32005CFF81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFE41A5E1C3D09AA005CFF81 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		EFF61C151C4E26BF00D65233 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				EFE41A531C3CAF32005CFF81 /* Assets.xcassets */,
 				EFE41A551C3CAF32005CFF81 /* LaunchScreen.storyboard */,
 				EFE41A581C3CAF32005CFF81 /* Info.plist */,
+				EFF61C151C4E26BF00D65233 /* Utility.swift */,
 			);
 			path = NEWS;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */,
 				EFE41A4F1C3CAF32005CFF81 /* ViewController.swift in Sources */,
+				EFF61C161C4E26BF00D65233 /* Utility.swift in Sources */,
 				EF941F4B1C488E2D005F0669 /* ArticleViewController.swift in Sources */,
 				EFE41A5F1C3D09AA005CFF81 /* NewsCell.swift in Sources */,
 				EFE41A4D1C3CAF32005CFF81 /* AppDelegate.swift in Sources */,

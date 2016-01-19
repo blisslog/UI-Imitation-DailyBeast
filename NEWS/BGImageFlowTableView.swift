@@ -31,7 +31,7 @@ class BGImageFlowTableView: UITableView {
         let cellCenter = cellRect.origin.y + cellRect.size.height/2;
         let contentCenter = self.contentOffset.y + self.bounds.size.height/2;
         
-        return (contentCenter - cellCenter) / 20
+        return (contentCenter - cellCenter) / 15
     }
     
 }
