@@ -29,6 +29,9 @@ class ArticleViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        self.label_article.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 22.0)
+        self.label_content.font = UIFont(name: "TimesNewRomanPSMT", size: 14.0)
+        
         self.label_article.text = self.articleText
         self.label_content.text = self.contents[self.index]
         self.img_bg.image = UIImage(named: "\(index)")
