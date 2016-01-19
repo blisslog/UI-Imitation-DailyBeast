@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
@@ -49,6 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,5 +89,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
     }
+    
+    // MARK: - override prepareForSegue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        NSLog("\(segue.identifier)")
+        if segue.identifier == "goArticle" {
+            
+            guard let indexPath = self.tableView.indexPathForSelectedRow else {
+                return;
+            }
+            
+            let article = segue.destinationViewController as! ArticleViewController;
+            article.articleText = titles[indexPath.row]
+            article.index = indexPath.row%2
+            //article .initData(title: titles[indexPath.row])
+        }
+    }
+    
 }
 
