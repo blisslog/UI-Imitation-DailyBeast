@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="waH-YK-Hxq" id="bBk-LS-n3g">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="129.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-qu-OBH">
@@ -168,7 +168,7 @@ Bromance</string>
         <!--Article View Controller-->
         <scene sceneID="B0b-Gy-OCf">
             <objects>
-                <viewController id="hjU-M6-8Jk" customClass="ArticleViewController" customModule="NEWS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" id="hjU-M6-8Jk" customClass="ArticleViewController" customModule="NEWS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lqw-qX-4fx"/>
                         <viewControllerLayoutGuide type="bottom" id="sKJ-1V-epc"/>
@@ -242,6 +242,9 @@ Bromance</string>
                                         <exclude reference="ysY-7S-soH"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="hjU-M6-8Jk" id="ZcX-OS-bUe"/>
+                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pde-Nc-Y2Z" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="20" width="600" height="35"/>
@@ -308,7 +311,7 @@ Bromance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRO-U5-WuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="903"/>
+            <point key="canvasLocation" x="1328" y="903"/>
         </scene>
     </scenes>
     <resources>
