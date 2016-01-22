@@ -13,10 +13,9 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var label_article: UILabel!
     @IBOutlet weak var label_content: UILabel!
     @IBOutlet weak var img_bg: UIImageView!
+    @IBOutlet weak var progress_readed: UIProgressView!
     var index: Int = 0
     var dataManager: DataManager!
-
-    
     var reqNext:Bool = false
     
     override func loadView() {
@@ -36,6 +35,8 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         self.label_article.text = self.dataManager.titles[self.index]
         self.label_content.text = self.dataManager.contents[self.index%2]
         self.img_bg.image = UIImage(named: "\(self.index%2)")
+        
+        self.progress_readed.progress = 0.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,11 +59,13 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         self.navigationController!.popToRootViewControllerAnimated(true)
     }
     
+    // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if reqNext {
             return
         }
         
+        // move next content
         let contentSize = scrollView.contentSize.height
         let offset_scrollBottom = scrollView.contentOffset.y + scrollView.bounds.height
         let rtnValue = contentSize - offset_scrollBottom
@@ -86,9 +89,13 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
             
         }
         
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // mark progress readed
+        let init_size = scrollView.bounds.height
+        let progress_value = (scrollView.contentOffset.y) / (contentSize - init_size)
+        
+        if self.progress_readed.progress < Float(progress_value) {
+            self.progress_readed.progress = Float(progress_value)
+        }
         
     }
     

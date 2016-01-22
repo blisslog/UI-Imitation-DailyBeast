@@ -54,12 +54,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 0;
     }
     
+    /*
+    // MARK : - Edit
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .Normal, title: "More") { action, index in
+            print("more button tapped")
+        }
+        more.backgroundColor = UIColor.lightGrayColor()
+        
+        let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
+            print("favorite button tapped")
+        }
+        favorite.backgroundColor = UIColor.orangeColor()
+        
+        let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
+            print("share button tapped")
+        }
+        share.backgroundColor = UIColor.blueColor()
+        
+        return [share, favorite, more]
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    // MARK : -
+    */
+    
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
     }
     
-    // MARK: - override prepareForSegue
+    // MARK: - UINavigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         NSLog("\(segue.identifier)")
         if segue.identifier == "goArticle" {

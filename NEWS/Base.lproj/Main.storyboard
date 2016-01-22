@@ -99,6 +99,9 @@ Bromance</string>
                                                         <constraint firstItem="ePy-2s-Kae" firstAttribute="top" secondItem="bKu-FM-iy6" secondAttribute="bottom" constant="6" id="q6p-co-2hL"/>
                                                         <constraint firstAttribute="bottom" secondItem="Kdj-Xk-lb8" secondAttribute="bottom" id="sjJ-05-LuJ"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -249,6 +252,21 @@ Bromance</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pde-Nc-Y2Z" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="20" width="600" height="35"/>
                                 <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="49S-ZP-NIU">
+                                        <rect key="frame" x="0.0" y="33" width="600" height="2"/>
+                                        <color key="tintColor" red="0.97647058819999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="04X-89-KO3"/>
+                                            <constraint firstAttribute="height" constant="2" id="Ddl-GX-3Qk"/>
+                                        </constraints>
+                                        <color key="progressTintColor" red="0.97647058819999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="04X-89-KO3"/>
+                                            </mask>
+                                        </variation>
+                                    </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uB-gg-5ia">
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="35"/>
                                         <constraints>
@@ -266,10 +284,25 @@ Bromance</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="0uB-gg-5ia" firstAttribute="leading" secondItem="pde-Nc-Y2Z" secondAttribute="leading" id="985-UX-CMP"/>
+                                    <constraint firstItem="49S-ZP-NIU" firstAttribute="leading" secondItem="pde-Nc-Y2Z" secondAttribute="leading" id="9j2-LU-7LJ"/>
+                                    <constraint firstItem="49S-ZP-NIU" firstAttribute="top" secondItem="pde-Nc-Y2Z" secondAttribute="top" constant="29" id="Jcg-Dq-0zo"/>
                                     <constraint firstAttribute="bottom" secondItem="0uB-gg-5ia" secondAttribute="bottom" id="LMl-Uw-Cj6"/>
                                     <constraint firstItem="0uB-gg-5ia" firstAttribute="top" secondItem="pde-Nc-Y2Z" secondAttribute="top" id="Mg6-k9-4TX"/>
+                                    <constraint firstAttribute="trailing" secondItem="49S-ZP-NIU" secondAttribute="trailing" id="PNK-TP-UJM"/>
                                     <constraint firstAttribute="height" constant="35" id="Sel-UP-Ro2"/>
+                                    <constraint firstAttribute="trailing" secondItem="49S-ZP-NIU" secondAttribute="trailing" id="TAH-dy-TTF"/>
+                                    <constraint firstAttribute="bottom" secondItem="49S-ZP-NIU" secondAttribute="bottom" id="cdC-rp-RWt"/>
+                                    <constraint firstItem="49S-ZP-NIU" firstAttribute="leading" secondItem="pde-Nc-Y2Z" secondAttribute="leading" id="iml-cm-5IF"/>
+                                    <constraint firstAttribute="bottom" secondItem="49S-ZP-NIU" secondAttribute="bottom" id="mEr-JJ-JN1"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9j2-LU-7LJ"/>
+                                        <exclude reference="Jcg-Dq-0zo"/>
+                                        <exclude reference="PNK-TP-UJM"/>
+                                        <exclude reference="cdC-rp-RWt"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_top_to_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="9Qs-zd-QjN">
                                 <rect key="frame" x="0.0" y="55" width="600" height="17"/>
@@ -307,6 +340,7 @@ Bromance</string>
                         <outlet property="img_bg" destination="Mqp-bd-mW2" id="hFM-Gx-sMV"/>
                         <outlet property="label_article" destination="2yu-lT-QRd" id="suP-9D-ft7"/>
                         <outlet property="label_content" destination="Ut3-kA-rRg" id="ii2-TE-RLb"/>
+                        <outlet property="progress_readed" destination="49S-ZP-NIU" id="lwv-XP-uOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRO-U5-WuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
