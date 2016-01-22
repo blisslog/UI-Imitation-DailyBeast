@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF15EEBD1C50C51B001D3330 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF15EEBC1C50C51B001D3330 /* DataManager.swift */; };
 		EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941F481C479243005F0669 /* BGImageFlowTableView.swift */; };
 		EF941F4B1C488E2D005F0669 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941F4A1C488E2D005F0669 /* ArticleViewController.swift */; };
 		EFE41A4D1C3CAF32005CFF81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE41A4C1C3CAF32005CFF81 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF15EEBC1C50C51B001D3330 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EF941F481C479243005F0669 /* BGImageFlowTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGImageFlowTableView.swift; sourceTree = "<group>"; };
 		EF941F4A1C488E2D005F0669 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		EFE41A491C3CAF32005CFF81 /* NEWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				EFE41A551C3CAF32005CFF81 /* LaunchScreen.storyboard */,
 				EFE41A581C3CAF32005CFF81 /* Info.plist */,
 				EFF61C151C4E26BF00D65233 /* Utility.swift */,
+				EF15EEBC1C50C51B001D3330 /* DataManager.swift */,
 			);
 			path = NEWS;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */,
 				EFE41A4F1C3CAF32005CFF81 /* ViewController.swift in Sources */,
 				EFF61C161C4E26BF00D65233 /* Utility.swift in Sources */,
+				EF15EEBD1C50C51B001D3330 /* DataManager.swift in Sources */,
 				EF941F4B1C488E2D005F0669 /* ArticleViewController.swift in Sources */,
 				EFE41A5F1C3D09AA005CFF81 /* NewsCell.swift in Sources */,
 				EFE41A4D1C3CAF32005CFF81 /* AppDelegate.swift in Sources */,
