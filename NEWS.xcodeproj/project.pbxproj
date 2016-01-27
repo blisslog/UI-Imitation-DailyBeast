@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF1434541C5891F800541F83 /* MGSwipeTableCell+extensionWithFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1434531C5891F800541F83 /* MGSwipeTableCell+extensionWithFont.swift */; };
 		EF15EEBD1C50C51B001D3330 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF15EEBC1C50C51B001D3330 /* DataManager.swift */; };
 		EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941F481C479243005F0669 /* BGImageFlowTableView.swift */; };
 		EF941F4B1C488E2D005F0669 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF941F4A1C488E2D005F0669 /* ArticleViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		3C419D1B857C0ECAD55793B1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD5577AEA35E3C2EC395B751 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EF1434531C5891F800541F83 /* MGSwipeTableCell+extensionWithFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGSwipeTableCell+extensionWithFont.swift"; sourceTree = "<group>"; };
 		EF15EEBC1C50C51B001D3330 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EF941F481C479243005F0669 /* BGImageFlowTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGImageFlowTableView.swift; sourceTree = "<group>"; };
 		EF941F4A1C488E2D005F0669 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				EFE41A581C3CAF32005CFF81 /* Info.plist */,
 				EFF61C151C4E26BF00D65233 /* Utility.swift */,
 				EF15EEBC1C50C51B001D3330 /* DataManager.swift */,
+				EF1434531C5891F800541F83 /* MGSwipeTableCell+extensionWithFont.swift */,
 			);
 			path = NEWS;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				EF941F491C479243005F0669 /* BGImageFlowTableView.swift in Sources */,
 				EFE41A4F1C3CAF32005CFF81 /* ViewController.swift in Sources */,
+				EF1434541C5891F800541F83 /* MGSwipeTableCell+extensionWithFont.swift in Sources */,
 				EFF61C161C4E26BF00D65233 /* Utility.swift in Sources */,
 				EF15EEBD1C50C51B001D3330 /* DataManager.swift in Sources */,
 				EF941F4B1C488E2D005F0669 /* ArticleViewController.swift in Sources */,

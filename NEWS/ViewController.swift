@@ -31,11 +31,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let btns :NSMutableArray = NSMutableArray()
 
         // MGSwipeTableCell
-        let btn1 = MGSwipeButton(title: "SKIP", backgroundColor: UIColor(red: 242.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0), padding:15, callback: {
+        let btn1 = MGSwipeButton(title: "SKIP", backgroundColor: UIColor(red: 242.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0), padding:5, callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             
             return true
         })
+        btn1.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 60.0)
+        btn1.sizeToFit()
+        
         btns.addObject(btn1)
 
         return btns
@@ -45,17 +48,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let btns :NSMutableArray = NSMutableArray()
         
         // MGSwipeTableCell
-        let btn1 = MGSwipeButton(title: "FOLLOW\nAUTHOR", backgroundColor: UIColor(red: 191.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0), padding:15, callback: {
+        let btn1 = MGSwipeButton(title: "FOLLOW\nAUTHOR", backgroundColor: UIColor(red: 191.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0), padding:20, callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("FOLLOW AUTHOR")
             return true
         })
+        btn1.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 15.0)
+        btn1.sizeToFit()
         
-        let btn2 = MGSwipeButton(title: "SHARE\nSTORY", backgroundColor: UIColor(red: 140.0/255.0, green: 22.0/255.0, blue: 22.0/255.0, alpha: 1.0), padding:15, callback: {
+        let btn2 = MGSwipeButton(title: "SHARE\nSTORY", backgroundColor: UIColor(red: 140.0/255.0, green: 22.0/255.0, blue: 22.0/255.0, alpha: 1.0), padding:20, callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("SHARE STORY")
             return true
         })
+        btn2.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 15.0)
+        btn2.sizeToFit()
         
         btns.addObject(btn1)
         btns.addObject(btn2)
@@ -136,7 +143,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if direction == MGSwipeDirection.LeftToRight {
             expansionSettings.fillOnTrigger = false
             expansionSettings.threshold = 1.2
-            
             return self.leftButtons() as [AnyObject]
         }
         else {
@@ -145,6 +151,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             return self.rightButtons() as [AnyObject]
         }
+    }
+    
+    func swipeTableCell(cell: MGSwipeTableCell!, didChangeSwipeState state: MGSwipeState, gestureIsActive: Bool) {
+        let str:NSString!
+        
+        switch state {
+        case MGSwipeState.None: str = "None"
+        case MGSwipeState.SwipingLeftToRight: str = "SwipingLeftToRight"
+        case MGSwipeState.SwipingRightToLeft:
+            str = "SwipingRightToLeft"
+            cell.swipeBackgroundColor = UIColor(red: 242.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+        case MGSwipeState.ExpandingLeftToRight: str = "ExpandingLeftToRight"
+        case MGSwipeState.ExpandingRightToLeft: str = "ExpandingRightToLeft"
+        }
+        NSLog("Swipe state: \(str) ::: Gesture: %@", gestureIsActive ? "Active" : "Ended");
+    }
+    
+    func swipeTableCellWillBeginSwiping(cell: MGSwipeTableCell!) {
+        
+    }
+    
+    func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell!) {
+        cell.swipeBackgroundColor = UIColor.clearColor()
     }
     
     // MARK: - UIScrollViewDelegate

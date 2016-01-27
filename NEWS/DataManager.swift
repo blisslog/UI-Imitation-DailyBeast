@@ -27,19 +27,19 @@ class DataManager {
     private init() {
         print("DataManager init");
         
-        titles = ["Marco Rubio's 'Illegal'\nBromance\nOKOK 3 line"
+        titles = ["Marco Rubio's 'Illegal'\nBromance"
             , "The Secret Gay World of ISIS"
             , "CIA Eyes Russian Hackers in\nGrid Attack"
             , "Photo of the Day"
-            , "Marco Rubio's 'Illegal'\nBromance\nOKOK 3 line"
+            , "Marco Rubio's 'Illegal'\nBromance"
             , "The Secret Gay World of ISIS"
             , "CIA Eyes Russian Hackers in\nGrid Attack"
             , "Photo of the Day"
-            , "Marco Rubio's 'Illegal'\nBromance\nOKOK 3 line"
+            , "Marco Rubio's 'Illegal'\nBromance"
             , "The Secret Gay World of ISIS"
             , "CIA Eyes Russian Hackers in\nGrid Attack"
             , "Photo of the Day"
-            , "Marco Rubio's 'Illegal'\nBromance\nOKOK 3 line"
+            , "Marco Rubio's 'Illegal'\nBromance"
             , "The Secret Gay World of ISIS"
             , "CIA Eyes Russian Hackers in\nGrid Attack"
             , "Photo of the Day"]
