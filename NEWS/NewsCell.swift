@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class NewsCell: UITableViewCell, BGImageFlowProtocol {
+class NewsCell: MGSwipeTableCell, BGImageFlowProtocol {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var desc: UILabel!

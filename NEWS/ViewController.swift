@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIGestureRecognizerDelegate, MGSwipeTableCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
@@ -24,6 +25,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func rightButtons() -> NSArray {
+        let btns :NSMutableArray = NSMutableArray()
+
+        // MGSwipeTableCell
+        let btn1 = MGSwipeButton(title: "SKIP", backgroundColor: UIColor(red: 242.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0), padding:15, callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            
+            return true
+        })
+        btns.addObject(btn1)
+
+        return btns
+    }
+    
+    func leftButtons() -> NSArray {
+        let btns :NSMutableArray = NSMutableArray()
+        
+        // MGSwipeTableCell
+        let btn1 = MGSwipeButton(title: "FOLLOW\nAUTHOR", backgroundColor: UIColor(red: 191.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0), padding:15, callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            print("FOLLOW AUTHOR")
+            return true
+        })
+        
+        let btn2 = MGSwipeButton(title: "SHARE\nSTORY", backgroundColor: UIColor(red: 140.0/255.0, green: 22.0/255.0, blue: 22.0/255.0, alpha: 1.0), padding:15, callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            print("SHARE STORY")
+            return true
+        })
+        
+        btns.addObject(btn1)
+        btns.addObject(btn2)
+        
+        return btns
     }
     
     // MARK: - UITableViewdelegate
@@ -42,6 +79,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let imageName = indexPath.row%2
         cell.bgImage.image = UIImage(named: "\(imageName)")
+        
+        cell.delegate = self
         
         return cell
     }
@@ -87,6 +126,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     // MARK : -
     */
+    
+    // MARK: - MGSwipeTableCellDelegate 
+    // https://github.com/MortimerGoro/MGSwipeTableCell
+    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
+        swipeSettings.transition = MGSwipeTransition.Border
+        expansionSettings.buttonIndex = 0
+        
+        if direction == MGSwipeDirection.LeftToRight {
+            expansionSettings.fillOnTrigger = false
+            expansionSettings.threshold = 1.2
+            
+            return self.leftButtons() as [AnyObject]
+        }
+        else {
+            expansionSettings.fillOnTrigger = true
+            expansionSettings.threshold = 2.0
+            
+            return self.rightButtons() as [AnyObject]
+        }
+    }
     
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
