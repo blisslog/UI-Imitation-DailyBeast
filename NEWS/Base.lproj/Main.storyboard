@@ -83,6 +83,13 @@ Bromance</string>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_readed" translatesAutoresizingMaskIntoConstraints="NO" id="bGk-T0-NYt">
+                                                            <rect key="frame" x="41" y="35" width="85" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="bGk-T0-NYt" secondAttribute="height" multiplier="17:12" id="bgf-gi-33b"/>
+                                                                <constraint firstAttribute="height" constant="60" id="u83-yM-EUO"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="Kdj-Xk-lb8" secondAttribute="trailing" id="6sg-Qf-wZt"/>
@@ -94,7 +101,9 @@ Bromance</string>
                                                         <constraint firstItem="Kdj-Xk-lb8" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" id="aW9-y3-Huv"/>
                                                         <constraint firstAttribute="trailing" secondItem="ePy-2s-Kae" secondAttribute="trailing" constant="19" id="b9Z-N8-C9A"/>
                                                         <constraint firstAttribute="bottom" secondItem="yld-oy-g7u" secondAttribute="bottom" constant="-50" id="baq-s1-f4A"/>
+                                                        <constraint firstItem="bGk-T0-NYt" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" constant="41" id="fni-hu-CtI"/>
                                                         <constraint firstAttribute="trailing" secondItem="yld-oy-g7u" secondAttribute="trailing" id="fyn-ob-YMG"/>
+                                                        <constraint firstItem="bGk-T0-NYt" firstAttribute="centerY" secondItem="Ln0-qu-OBH" secondAttribute="centerY" id="kIx-cg-oV3"/>
                                                         <constraint firstItem="ePy-2s-Kae" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" constant="19" id="mpr-VF-J31"/>
                                                         <constraint firstItem="ePy-2s-Kae" firstAttribute="top" secondItem="bKu-FM-iy6" secondAttribute="bottom" constant="6" id="q6p-co-2hL"/>
                                                         <constraint firstAttribute="bottom" secondItem="Kdj-Xk-lb8" secondAttribute="bottom" id="sjJ-05-LuJ"/>
@@ -119,6 +128,7 @@ Bromance</string>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bgImage" destination="yld-oy-g7u" id="Qro-nQ-EfM"/>
+                                            <outlet property="checkReaded" destination="bGk-T0-NYt" id="cXh-vm-oxM"/>
                                             <outlet property="desc" destination="ePy-2s-Kae" id="uen-oQ-Vso"/>
                                             <outlet property="title" destination="bKu-FM-iy6" id="XrU-pg-dGa"/>
                                             <outlet property="viewFrame" destination="Ln0-qu-OBH" id="Uct-az-mSz"/>
@@ -349,6 +359,7 @@ Bromance</string>
         </scene>
     </scenes>
     <resources>
+        <image name="check_readed" width="85" height="60"/>
         <image name="gradient_left_to_right" width="266" height="1"/>
         <image name="gradient_top_to_bottom" width="1" height="6"/>
     </resources>

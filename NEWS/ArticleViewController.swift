@@ -17,6 +17,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     var index: Int = 0
     var dataManager: DataManager!
     var reqNext:Bool = false
+    var article:Article!
     
     override func loadView() {
         super.loadView()
@@ -29,14 +30,21 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view.
         dataManager = DataManager.sharedInstance
         
-        self.label_article.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 22.0)
-        self.label_content.font = UIFont(name: "TimesNewRomanPSMT", size: 14.0)
+        article = dataManager.items[index] as Article
         
-        self.label_article.text = self.dataManager.titles[self.index]
-        self.label_content.text = self.dataManager.contents[self.index%2]
-        self.img_bg.image = UIImage(named: "\(self.index%2)")
         
-        self.progress_readed.progress = 0.0
+        // Setting Data
+        label_article.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 22.0)
+        label_content.font = UIFont(name: "TimesNewRomanPSMT", size: 14.0)
+        
+        label_article.text = article.title
+        label_content.text = article.content
+        img_bg.image = UIImage(named: "\(index%2)")
+        
+        progress_readed.progress = article.readingRate
+        
+        // mark Readed
+        article.readed = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +81,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         if rtnValue < -50 {
             reqNext = true
             
-            if self.dataManager.titles.count > index + 1 {
+            if dataManager.items.count > index + 1 {
                 let transition = CATransition()
                 transition.duration = 0.4
                 transition.type = kCATransitionMoveIn
@@ -85,6 +93,8 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
             
                 vc.index = index + 1
                 self.navigationController!.pushViewController(vc, animated: false)
+                
+                article.readingRate = 1.0
             }
             
         }
@@ -95,6 +105,9 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         
         if self.progress_readed.progress < Float(progress_value) {
             self.progress_readed.progress = Float(progress_value)
+            article.readingRate = Float(progress_value)
+        } else if self.progress_readed.progress >= 1.0 {
+            article.readingRate = 1.0
         }
         
     }

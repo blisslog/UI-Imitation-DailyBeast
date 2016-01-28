@@ -15,6 +15,7 @@ class NewsCell: MGSwipeTableCell, BGImageFlowProtocol {
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var viewFrame: UIView!
+    @IBOutlet weak var checkReaded: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
