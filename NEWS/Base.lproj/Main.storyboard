@@ -90,8 +90,18 @@ Bromance</string>
                                                                 <constraint firstAttribute="height" constant="60" id="u83-yM-EUO"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z26-TP-b80">
+                                                            <rect key="frame" x="0.0" y="128" width="600" height="2"/>
+                                                            <color key="tintColor" red="0.97647058819999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="2" id="04k-zA-tcc"/>
+                                                            </constraints>
+                                                            <color key="progressTintColor" red="0.97647058819999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </progressView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="z26-TP-b80" secondAttribute="bottom" id="1fw-lw-1PC"/>
                                                         <constraint firstAttribute="trailing" secondItem="Kdj-Xk-lb8" secondAttribute="trailing" id="6sg-Qf-wZt"/>
                                                         <constraint firstItem="yld-oy-g7u" firstAttribute="top" secondItem="Ln0-qu-OBH" secondAttribute="top" constant="-50" id="K23-iO-CCw"/>
                                                         <constraint firstItem="bKu-FM-iy6" firstAttribute="top" secondItem="Ln0-qu-OBH" secondAttribute="top" constant="20" id="Ko0-jf-L0D"/>
@@ -101,9 +111,11 @@ Bromance</string>
                                                         <constraint firstItem="Kdj-Xk-lb8" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" id="aW9-y3-Huv"/>
                                                         <constraint firstAttribute="trailing" secondItem="ePy-2s-Kae" secondAttribute="trailing" constant="19" id="b9Z-N8-C9A"/>
                                                         <constraint firstAttribute="bottom" secondItem="yld-oy-g7u" secondAttribute="bottom" constant="-50" id="baq-s1-f4A"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z26-TP-b80" secondAttribute="trailing" id="c25-H6-Uaw"/>
                                                         <constraint firstItem="bGk-T0-NYt" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" constant="41" id="fni-hu-CtI"/>
                                                         <constraint firstAttribute="trailing" secondItem="yld-oy-g7u" secondAttribute="trailing" id="fyn-ob-YMG"/>
                                                         <constraint firstItem="bGk-T0-NYt" firstAttribute="centerY" secondItem="Ln0-qu-OBH" secondAttribute="centerY" id="kIx-cg-oV3"/>
+                                                        <constraint firstItem="z26-TP-b80" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" id="l2a-nf-Xru"/>
                                                         <constraint firstItem="ePy-2s-Kae" firstAttribute="leading" secondItem="Ln0-qu-OBH" secondAttribute="leading" constant="19" id="mpr-VF-J31"/>
                                                         <constraint firstItem="ePy-2s-Kae" firstAttribute="top" secondItem="bKu-FM-iy6" secondAttribute="bottom" constant="6" id="q6p-co-2hL"/>
                                                         <constraint firstAttribute="bottom" secondItem="Kdj-Xk-lb8" secondAttribute="bottom" id="sjJ-05-LuJ"/>
@@ -130,6 +142,7 @@ Bromance</string>
                                             <outlet property="bgImage" destination="yld-oy-g7u" id="Qro-nQ-EfM"/>
                                             <outlet property="checkReaded" destination="bGk-T0-NYt" id="cXh-vm-oxM"/>
                                             <outlet property="desc" destination="ePy-2s-Kae" id="uen-oQ-Vso"/>
+                                            <outlet property="readingProgress" destination="z26-TP-b80" id="ILT-ub-LML"/>
                                             <outlet property="title" destination="bKu-FM-iy6" id="XrU-pg-dGa"/>
                                             <outlet property="viewFrame" destination="Ln0-qu-OBH" id="Uct-az-mSz"/>
                                             <segue destination="hjU-M6-8Jk" kind="show" identifier="goArticle" id="qje-DB-4ys"/>

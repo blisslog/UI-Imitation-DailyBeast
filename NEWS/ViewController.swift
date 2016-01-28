@@ -101,8 +101,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if article.readingRate >= 1.0 {
             cell.checkReaded.hidden = false
+            cell.readingProgress.progress = 0.0
         } else {
             cell.checkReaded.hidden = true
+            cell.readingProgress.progress = article.readingRate    
         }
         
         let imageName = indexPath.row%2
