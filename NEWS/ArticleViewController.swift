@@ -17,6 +17,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     var index: Int = 0
     var dataManager: DataManager!
     var reqNext:Bool = false
+    var dragging:Bool = false
     var article:Article!
     
     override func loadView() {
@@ -69,19 +70,20 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if reqNext {
-            return
-        }
         
         // move next content
         let contentSize = scrollView.contentSize.height
         let offset_scrollBottom = scrollView.contentOffset.y + scrollView.bounds.height
         let rtnValue = contentSize - offset_scrollBottom
         
+        if reqNext {
+            return
+        }
+        
         if rtnValue < -50 {
-            reqNext = true
-            
-            if dataManager.items.count > index + 1 {
+            if dragging && self.progress_readed.progress >= 1.0 && dataManager.items.count > index + 1 {
+                reqNext = true
+                
                 let transition = CATransition()
                 transition.duration = 0.4
                 transition.type = kCATransitionMoveIn
@@ -96,7 +98,6 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
                 
                 article.readingRate = 1.0
             }
-            
         }
         
         // mark progress readed
@@ -110,6 +111,14 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
             article.readingRate = 1.0
         }
         
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        dragging = true
+    }
+    
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        dragging = false
     }
     
 }
