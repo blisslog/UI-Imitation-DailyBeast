@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:NewsCell = self.tableView.dequeueReusableCellWithIdentifier("news_cell")! as! NewsCell
+        let cell:ArticleCell = self.tableView.dequeueReusableCellWithIdentifier("article_cell")! as! ArticleCell
         
         let article = self.dataManager.items[indexPath.row] as Article
         
@@ -116,13 +116,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! NewsCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
         let imageName = indexPath.row%2
         cell.bgImage.image = UIImage(named: "\(imageName)")
     }
     
     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! NewsCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
         let imageName = indexPath.row%2
         cell.bgImage.image = UIImage(named: "\(imageName)")?.grayscale()
     }
