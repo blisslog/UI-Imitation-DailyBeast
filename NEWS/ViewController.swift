@@ -107,9 +107,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.readingProgress.progress = article.readingRate    
         }
         
-        let imageName = indexPath.row%2
-        cell.bgImage.image = UIImage(named: "\(imageName)")?.grayscale()
-        
+        cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
+
         cell.delegate = self
         
         return cell
@@ -117,14 +116,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
-        let imageName = indexPath.row%2
-        cell.bgImage.image = UIImage(named: "\(imageName)")
+        let article = self.dataManager.items[indexPath.row] as Article
+        cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: false)
     }
     
     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
-        let imageName = indexPath.row%2
-        cell.bgImage.image = UIImage(named: "\(imageName)")?.grayscale()
+        let article = self.dataManager.items[indexPath.row] as Article
+        cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
