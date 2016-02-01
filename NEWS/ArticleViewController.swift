@@ -2,8 +2,8 @@
 //  ArticleViewController.swift
 //  NEWS
 //
-//  Created by TS0442 on 2016. 1. 15..
-//  Copyright © 2016년 TS. All rights reserved.
+//  Created by BlissLog on 2016. 1. 15..
+//  Copyright © 2016년 BlissLog. All rights reserved.
 //
 
 import UIKit
