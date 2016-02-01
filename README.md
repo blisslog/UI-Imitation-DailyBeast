@@ -1,7 +1,7 @@
 # README #
 
 2016.01 
-Use Swift n Storyboard For UI Study
+Use Swift n Storyboard For UI Study.
 I choiced TheDailyBeast iOS Application, it's well made app
 
 ### Point ###
@@ -11,3 +11,4 @@ I choiced TheDailyBeast iOS Application, it's well made app
 * used CocoaPods
     * MGSwipeTableCell
 
+![ui-immitation-thedailybeast.jpg](https://bitbucket.org/repo/56yEkB/images/323023807-ui-immitation-thedailybeast.jpg)
