@@ -2,8 +2,8 @@
 //  UIImageView+downloadByImageUrl.swift
 //  NEWS
 //
-//  Created by BlissLog on 2016. 1. 29..
-//  Copyright © 2016년 BlissLog. All rights reserved.
+//  http://stackoverflow.com/questions/24231680/loading-image-from-url
+//  answered Leo Dabus
 //
 
 import UIKit

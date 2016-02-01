@@ -2,8 +2,7 @@
 //  UIImage+grayscale.swift
 //  NEWS
 //
-//  Created by BlissLog on 2016. 1. 28..
-//  Copyright © 2016년 BlissLog. All rights reserved.
+//  https://github.com/devxoul/Hippo-iOS/blob/master/Hippo/Extensions/UIImage%2BGrayScale.swift
 //
 
 import UIKit
