@@ -11,5 +11,3 @@ I choiced TheDailyBeast iOS Application, it's well made app
 * used CocoaPods
     * MGSwipeTableCell
 
-![image](https://bitbucket.org/repo/56yEkB/images/323023807-ui-immitation-thedailybeast.jpg)
-https://bitbucket.org/repo/56yEkB/images/323023807-ui-immitation-thedailybeast.jpg
