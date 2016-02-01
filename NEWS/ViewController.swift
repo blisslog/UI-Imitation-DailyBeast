@@ -107,7 +107,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.readingProgress.progress = article.readingRate    
         }
         
-        cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+            cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
+        }
 
         cell.delegate = self
         
@@ -117,13 +119,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
         let article = self.dataManager.items[indexPath.row] as Article
-        cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: false)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+            cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: false)
+        }
     }
     
     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
         let article = self.dataManager.items[indexPath.row] as Article
-        cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+            cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
+        }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

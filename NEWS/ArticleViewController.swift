@@ -18,7 +18,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     var dataManager: DataManager!
     var reqNext:Bool = false
     var dragging:Bool = false
-    var article:Article!
+    weak var article:Article!
     
     override func loadView() {
         super.loadView()
@@ -40,7 +40,10 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         
         label_article.text = article.title
         label_content.text = article.content
-        img_bg.image = UIImage(named: "\(index%2)")
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+            self.img_bg.downloadByImageUrl(self.article.imgUrl!, grayscale: false)
+        }
         
         progress_readed.progress = article.readingRate
         
