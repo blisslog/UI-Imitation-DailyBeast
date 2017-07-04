@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var topView: UIView!
     var dataManager:DataManager!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
@@ -36,15 +36,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let btns :NSMutableArray = NSMutableArray()
 
         // MGSwipeTableCell
+        
         let btn1 = MGSwipeButton(title: "SKIP", backgroundColor: UIColor(red: 242.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0), padding:5, callback: {
-            (sender: MGSwipeTableCell!) -> Bool in
+            (sender: MGSwipeTableCell?) -> Bool in
+            
             
             return true
         })
-        btn1.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 60.0)
-        btn1.sizeToFit()
         
-        btns.addObject(btn1)
+        btn1?.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 60.0)
+        btn1?.sizeToFit()
+        
+        btns.add(btn1)
 
         return btns
     }
@@ -54,34 +57,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // MGSwipeTableCell
         let btn1 = MGSwipeButton(title: "FOLLOW\nAUTHOR", backgroundColor: UIColor(red: 191.0/255.0, green: 31.0/255.0, blue: 31.0/255.0, alpha: 1.0), padding:20, callback: {
-            (sender: MGSwipeTableCell!) -> Bool in
+            (sender: MGSwipeTableCell?) -> Bool in
             print("FOLLOW AUTHOR")
             return true
         })
-        btn1.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 15.0)
-        btn1.sizeToFit()
+        btn1?.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 15.0)
+        btn1?.sizeToFit()
         
         let btn2 = MGSwipeButton(title: "SHARE\nSTORY", backgroundColor: UIColor(red: 140.0/255.0, green: 22.0/255.0, blue: 22.0/255.0, alpha: 1.0), padding:20, callback: {
-            (sender: MGSwipeTableCell!) -> Bool in
+            (sender: MGSwipeTableCell?) -> Bool in
             print("SHARE STORY")
             return true
         })
-        btn2.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 15.0)
-        btn2.sizeToFit()
+        btn2?.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 15.0)
+        btn2?.sizeToFit()
         
-        btns.addObject(btn1)
-        btns.addObject(btn2)
+        btns.add(btn1)
+        btns.add(btn2)
         
         return btns
     }
     
     // MARK: - UITableViewdelegate
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataManager.items.count;
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:ArticleCell = self.tableView.dequeueReusableCellWithIdentifier("article_cell")! as! ArticleCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:ArticleCell = self.tableView.dequeueReusableCell(withIdentifier: "article_cell")! as! ArticleCell
         
         let article = self.dataManager.items[indexPath.row] as Article
         
@@ -95,19 +98,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.title.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
             cell.desc.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
         } else {
-            cell.title.textColor = UIColor.blackColor()
-            cell.desc.textColor = UIColor.blackColor()
+            cell.title.textColor = UIColor.black
+            cell.desc.textColor = UIColor.black
         }
         
         if article.readingRate >= 1.0 {
-            cell.checkReaded.hidden = false
+            cell.checkReaded.isHidden = false
             cell.readingProgress.progress = 0.0
         } else {
-            cell.checkReaded.hidden = true
+            cell.checkReaded.isHidden = true
             cell.readingProgress.progress = article.readingRate    
         }
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { () -> Void in
             cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
         }
 
@@ -116,23 +119,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ArticleCell
         let article = self.dataManager.items[indexPath.row] as Article
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { () -> Void in
             cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: false)
         }
     }
     
-    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ArticleCell
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ArticleCell
         let article = self.dataManager.items[indexPath.row] as Article
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { () -> Void in
             cell.bgImage.downloadByImageUrl(article.imgUrl!, grayscale: true)
         }
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0;
     }
     
@@ -172,11 +175,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - MGSwipeTableCellDelegate 
     // https://github.com/MortimerGoro/MGSwipeTableCell
-    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
-        swipeSettings.transition = MGSwipeTransition.Border
+    func swipeTableCell(_ cell: MGSwipeTableCell!, swipeButtonsFor direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
+        swipeSettings.transition = MGSwipeTransition.border
         expansionSettings.buttonIndex = 0
         
-        if direction == MGSwipeDirection.LeftToRight {
+        if direction == MGSwipeDirection.leftToRight {
             expansionSettings.fillOnTrigger = false
             expansionSettings.threshold = 1.2
             return self.leftButtons() as [AnyObject]
@@ -189,32 +192,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func swipeTableCell(cell: MGSwipeTableCell!, didChangeSwipeState state: MGSwipeState, gestureIsActive: Bool) {
+    func swipeTableCell(_ cell: MGSwipeTableCell!, didChange state: MGSwipeState, gestureIsActive: Bool) {
         let str:NSString!
         
         switch state {
-        case MGSwipeState.None: str = "None"
-        case MGSwipeState.SwipingLeftToRight: str = "SwipingLeftToRight"
-        case MGSwipeState.SwipingRightToLeft:
+        case MGSwipeState.none: str = "None"
+        case MGSwipeState.swipingLeftToRight: str = "SwipingLeftToRight"
+        case MGSwipeState.swipingRightToLeft:
             str = "SwipingRightToLeft"
             cell.swipeBackgroundColor = UIColor(red: 242.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-        case MGSwipeState.ExpandingLeftToRight: str = "ExpandingLeftToRight"
-        case MGSwipeState.ExpandingRightToLeft: str = "ExpandingRightToLeft"
+        case MGSwipeState.expandingLeftToRight: str = "ExpandingLeftToRight"
+        case MGSwipeState.expandingRightToLeft: str = "ExpandingRightToLeft"
         }
         NSLog("Swipe state: \(str) ::: Gesture: %@", gestureIsActive ? "Active" : "Ended");
     }
     
-    func swipeTableCellWillEndSwiping(cell: MGSwipeTableCell!) {
-        cell.swipeBackgroundColor = UIColor.clearColor()
+    func swipeTableCellWillEndSwiping(_ cell: MGSwipeTableCell!) {
+        cell.swipeBackgroundColor = UIColor.clear
     }
     
     // MARK: - UIScrollViewDelegate
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
     
     // MARK: - UINavigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         NSLog("\(segue.identifier)")
         if segue.identifier == "goArticle" {
             
@@ -222,7 +225,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return;
             }
             
-            let article = segue.destinationViewController as! ArticleViewController;
+            let article = segue.destination as! ArticleViewController;
             article.index = indexPath.row
         }
     }

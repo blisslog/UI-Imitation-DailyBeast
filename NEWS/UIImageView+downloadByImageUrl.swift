@@ -9,29 +9,29 @@
 import UIKit
 
 extension UIImageView {
-    func downloadByImageUrl(urlStr:String, grayscale:Bool) {
-        guard let url = NSURL(string: urlStr) else {return}
+    func downloadByImageUrl(_ urlStr:String, grayscale:Bool) {
+        guard let url = URL(string: urlStr) else {return}
         
         let extInfo = Utility.isExistImageFile(urlStr)
         if extInfo.is_exist {
             var image = UIImage(contentsOfFile: extInfo.full_path)!
             if grayscale {image = image.grayscale()}
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            DispatchQueue.main.async { () -> Void in
                 self.image = image
             }
         } else {
-            NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
                 guard
-                    let httpURLResponse = response as? NSHTTPURLResponse where httpURLResponse.statusCode == 200,
-                    let mimeType = response?.MIMEType where mimeType.hasPrefix("image"),
-                    let data = data where error == nil,
+                    let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                    let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                    let data = data, error == nil,
                     var image = UIImage(data: data)
                     else { return }
                 if grayscale {image = image.grayscale()}
-                data.writeToFile(extInfo.full_path, atomically: true)
-                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                try? data.write(to: URL(fileURLWithPath: extInfo.full_path), options: [.atomic])
+                DispatchQueue.main.async { () -> Void in
                     self.image = image
-                    UIView.animateWithDuration(0.25, animations: { () -> Void in
+                    UIView.animate(withDuration: 0.25, animations: { () -> Void in
                         self.alpha = 0
                         self.alpha = 1
                     })

@@ -18,16 +18,16 @@ class BGImageFlowTableView: UITableView {
         self.flow()
     }
     
-    private func flow() -> Void {
-        for indexPath in self.indexPathsForVisibleRows! as [NSIndexPath] {
-            if let cell = self.cellForRowAtIndexPath(indexPath) as? BGImageFlowProtocol {
+    fileprivate func flow() -> Void {
+        for indexPath in self.indexPathsForVisibleRows! as [IndexPath] {
+            if let cell = self.cellForRow(at: indexPath) as? BGImageFlowProtocol {
                 cell.flowCell(moveY: self.computeDistanceFromCenter(indexPath))
             }
         }
     }
     
-    private func computeDistanceFromCenter(indexPath:NSIndexPath) -> CGFloat {
-        let cellRect = self.rectForRowAtIndexPath(indexPath);
+    fileprivate func computeDistanceFromCenter(_ indexPath:IndexPath) -> CGFloat {
+        let cellRect = self.rectForRow(at: indexPath);
         let cellCenter = cellRect.origin.y + cellRect.size.height/2;
         let contentCenter = self.contentOffset.y + self.bounds.size.height/2;
         

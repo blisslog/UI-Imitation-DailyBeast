@@ -23,14 +23,14 @@ class ArticleCell: MGSwipeTableCell, BGImageFlowProtocol {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
     func flowCell(moveY value: CGFloat) {
-        self.bgImage.transform = CGAffineTransformMakeTranslation(0.0, value)
+        self.bgImage.transform = CGAffineTransform(translationX: 0.0, y: value)
     }
 
 }

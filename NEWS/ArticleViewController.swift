@@ -41,7 +41,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         label_article.text = article.title
         label_content.text = article.content
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)) { () -> Void in
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { () -> Void in
             self.img_bg.downloadByImageUrl(self.article.imgUrl!, grayscale: false)
         }
         
@@ -68,11 +68,11 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     */
     
     @IBAction func pressedBtn() -> Void {
-        self.navigationController!.popToRootViewControllerAnimated(true)
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
     // MARK: - UIScrollViewDelegate
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         // move next content
         let contentSize = scrollView.contentSize.height
@@ -92,9 +92,9 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
                 transition.type = kCATransitionMoveIn
                 transition.subtype = kCATransitionFromTop
                 
-                self.navigationController!.view.layer .addAnimation(transition, forKey: kCATransition)
+                self.navigationController!.view.layer .add(transition, forKey: kCATransition)
                 
-                let vc:ArticleViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ArticleViewController") as! ArticleViewController
+                let vc:ArticleViewController = self.storyboard!.instantiateViewController(withIdentifier: "ArticleViewController") as! ArticleViewController
             
                 vc.index = index + 1
                 self.navigationController!.pushViewController(vc, animated: false)
@@ -116,11 +116,11 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         dragging = true
     }
     
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         dragging = false
     }
     

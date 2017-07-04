@@ -17,13 +17,13 @@ class Article {
     var readed:Bool! = false
     var readingRate:Float = 0.0
     
-    func setArticle(title:String, desc:String, content:String) {
+    func setArticle(_ title:String, desc:String, content:String) {
         self.title = title
         self.desc = desc
         self.content = content
     }
     
-    func setArticle(title:String, desc:String, content:String, img_url:String) {
+    func setArticle(_ title:String, desc:String, content:String, img_url:String) {
         self.title = title
         self.desc = desc
         self.content = content

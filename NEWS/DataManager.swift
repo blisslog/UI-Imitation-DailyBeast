@@ -9,20 +9,15 @@
 import UIKit
 
 class DataManager {
+    
     var items = [Article]()
     
-    class var sharedInstance: DataManager {
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: DataManager? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = DataManager()
-        }
-        return Static.instance!
-    }
+    static var sharedInstance: DataManager = {
+        let instance = DataManager()
+        return instance
+    }()
     
-    private init() {
+    fileprivate init() {
         print("DataManager init");
         
         var titles = [String]()
@@ -79,7 +74,7 @@ class DataManager {
             let article:Article = Article()
             article.setArticle(titles[cnt], desc: descs[cnt], content: contents[cnt%2], img_url: imgUrls[cnt%2])
             items.append(article)
-            cnt++
+            cnt += 1
         } while cnt < titles.count
         
 
